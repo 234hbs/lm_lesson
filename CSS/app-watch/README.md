@@ -1,0 +1,8 @@
+- h5 新标签 语义化
+ - section 部分
+ - header 头
+- 居中
+ - 定位 left：50%;top: 50%;（百分之多少是相对于父级来说的）
+ - transform 适用于不知道元素宽带高
+ - margin 负值 适用于知道元素宽高
+- position:absolute

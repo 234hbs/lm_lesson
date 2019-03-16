@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test{
+            width: 200px;
+            height: 300px;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+
+    </div>
+    <script>
+        function getColor(){
+            var str="#";
+        const items=[0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+        for(let i=0;i<6;i++){
+            let index=parseInt(Math.random()*16);
+            str+=items[index];
+        }
+        // console.log(str);
+        // Math.random() 函数返回一个浮点,  伪随机数在范围[0，1)
+        return str;
+        }
+        window.onload=function(){
+            document.getElementsByClassName("test").style.backgroundColor=getColor();
+        };
+        console.log(getColor());
+
+        
+    </script>
+</body>
+</html>

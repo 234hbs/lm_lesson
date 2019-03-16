@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+           <div class="page button js_show">
+                <div class="page__bd page__bd_spacing"> 
+                        <a href="#" class="weui-btn weui-btn_primary" id="primary">
+                            页面主要操作 normal
+                        </a>
+                        <a href="#" class="weui-btn weui-btn_primary weui-btn_loading" id="loading">
+                            <i class="weui-loading"></i><!--i标签也算是test-align管理的内容（text）  -->
+                                页面主要操作 loading
+                        </a>
+                        <a href="#" class="weui-btn weui-btn_disabled">
+                                页面主要操作 disabled
+                        </a>
+                        <!-- disabled 禁止 -->
+                        <!-- 以下是练习 -->
+                            <a href="#" class="weui-btn weui-btn_test">
+                                页面主要操作 test
+                            </a>
+                </div>
+           </div>
+    </div>
+    <script>
+        var oLoading=document.getElementById("loading");
+        console.log(oLoading);
+        oLoading.onclick=function(){
+            // console.log("123");
+            this.innerHTML="good!";
+        }
+        var oPrimary=document.getElementById("primary");
+        oPrimary.onclick=function(){
+            this.classList.add('active');
+        //     var _this=this;
+        //     setTimeout(function(){
+        //         console.log(this);
+        //     _this.classList.remove('active')
+        //  },1000)
+        setTimeout(()=>{
+            this.classList.remove('active')
+        },100)
+        // 箭头函数里没有作用域的限制
+        }
+        
+    </script>
+</body>
+</html>

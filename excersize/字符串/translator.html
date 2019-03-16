@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.提示输入一个单词
+        //2.如果没有，提示没有次单词
+        //3.否则显示此单词的翻译
+
+
+
+        //创建空对象，单词作为键，中文意义字符串作为值；
+        var words={
+        able:"adj.有能力的",
+        blood:"n.血液",
+        cold:"adj.冷的"
+        };
+        while(true){
+            var pro=prompt("请输入你要查找的单词：");
+        if(words[pro]){
+            alert(words[pro]);
+        }else{
+            words[pro];
+            var newWord=prompt("请输入"+pro+"中文意思");
+            words[pro]=newWord;
+          }
+        }
+        
+    </script>
+</body>
+</html>

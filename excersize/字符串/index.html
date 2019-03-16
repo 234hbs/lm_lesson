@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var str="老王真帅！";
+        // var index=str.indexOf("老王");
+        // console.log(index);
+        // str=str.substr(index,2);
+        // console.log(str);
+
+    //     var str="hello oh my god!";
+    //    // var index=str.indexOf("o",0);
+    //    var index=0;//从开始的位置
+    //    while((index=str.indexOf('o',index))!=-1){
+    //        console.log(index);
+    //        index++;
+    //    }
+       //队列的先进先出思想
+       //找到字符串中每个字母出现的次数
+       var str="whatOareYyouYnoYshaHleiHoHmyHgod";
+       //1.统一为小写字母
+       str1=str.toLocaleLowerCase();
+       console.log(str1);
+       //2.创建一个空对象，把字母作为键，次数作为值；
+       var obj={};
+       for(let i=0;i<str1.length;i++){
+           var key=str1[i];
+           if(!(obj[key]))//如果对象中没有这个字母,就存到对象中，初始值设为一
+           {
+             obj[key]=1;
+           }
+           else
+           {
+               obj[key]++;
+           }
+       }
+       //3.遍历对象，用for in 循环 得出每个字母出现的次数
+       for(let key in obj){
+           console.log(key);
+           console.log(key+"这个字母出现了"+obj[key]+"次");
+       }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script>
+        //点击每个li
+        //console.log() 里面的内容 <li>1</li> 1
+        const ul=document.getElementById('list');
+        const li=ul.getElementsByTagName('li');
+        console.log(ul);
+        console.log(li);
+        for(let i=0;i<li.length;i++){
+            li[i].onclick=function(){
+            //  console.log(this.innerHTML);
+                console.log(event.target.innerHTML);
+            }
+        }
+
+        // document.getElementById("list").addEventListener(
+        //     "click",
+        //     event => {
+        //         if(event.target.tagName.toLowerCase()==='li'){
+        //             console.log(event.target.innerHTML);
+        //         }
+        //     }
+        // );
+
+        // const lists=document.getElementById("list");
+        // lists.addEventListener('onclick',()=>{
+        //     console.log(event.target.innerHTML);
+        // })
+
+
+    </script>
+</body>
+
+</html>

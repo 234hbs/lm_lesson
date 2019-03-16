@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>duck sing -js 动态模型</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        //jason object 
+        let choir=[]; //合唱团  let 跟 var 一样用来定义变量
+        const chicken={
+            duckSinging(){
+                console.log('嘎嘎嘎');
+            }
+        };
+
+        const duck={
+            //简写形式
+            duckSinging(){
+                console.log('嘎嘎嘎');
+            }
+        }
+
+        let joinChoir;
+        joinChoir=2;
+        joinChoir=(animal)=>{
+            //规避不合法的输入
+            if(animal && typeof animal.duckSinging==='function'){ // ==值相等  ===值和类型都相等
+            choir.push(animal);  //push是数组的一个添加函数
+            console.log('恭喜加入合唱团');
+           // console.log(choir.length);
+            }
+            
+        };
+
+        for(let i=0;i<999;i++){
+            joinChoir(duck);
+        }
+        console.log('合唱团鸭子数量'+choir.length);
+        joinChoir(chicken);
+        console.log('合唱团成员数量'+choir.length);
+    </script>
+</body>
+</html>

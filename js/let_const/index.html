@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 放内容 -->
+    <script>
+        var name="喻晗";
+        // var dl=null;
+        // var dl="小王";
+        function dLName(){
+            //函数局部作用域
+            //函数运行时，诞生
+            var dl="尼古拉斯";
+           //运行结束后，回收
+        }
+        //{} 代表的是块级作用域
+        if(true)
+        {
+           const EncouragementTeacher="白蛇";
+        //    emas6 的 const let 定义的变量只在{} 内起作用
+        }
+        for(var i=0;i<10;i++){
+            setTimeout(function(){
+                console.log("the number is"+i)
+            },1000);       
+        }
+        // console.log(EncouragementTeacher);
+        // console.log(dl);
+    </script>
+</body>
+</html>

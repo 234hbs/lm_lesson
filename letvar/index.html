@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let a = "hey I am outside";
+       console.log(a);
+       if(true){
+                
+                console.log(a);//Uncaught ReferenceError: a is not defined
+                let a = "hey I am inside";
+            }
+
+    // console.log(a);//Uncaught ReferenceError: a is not defined
+    // let a = "hey I am now hoisting";
+    
+    // console.log(a);
+    // var a = "hey I am now hoisting";
+    
+
+  
+    
+
+
+    </script>
+</body>
+</html>

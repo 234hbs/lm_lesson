@@ -1,0 +1,30 @@
+.fengche{
+    width:400px;
+    height: 400px;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    animation: xuanzhuan 1s infinite;
+    transition: all 1s;
+}
+@keyframes xuanzhuan{
+   0%{
+       transform: rotate(0);
+   }
+   20%{
+    transform: rotate(72deg);
+   }
+   40%{
+    transform: rotate(144deg);
+   }
+   60%{
+    transform: rotate(216deg);
+   }
+   80%{
+    transform: rotate(288deg);
+   }
+   100%{
+    transform: rotate(360deg);
+   }
+}
