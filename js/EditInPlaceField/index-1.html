@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        // 构造函数
+        function EditInPlace(id,value,parentElement){
+            this.id=id;
+            this.value=value;
+            this.parentElement=parentElement;
+            this.createElement(this.id);
+        }
+        EditInPlace.prototype.createElement=function(id,value){
+            this.containerElement=document.createElement('div');
+            this.containerElement.id=id;
+            this.parentElement.appendChild(this.containerElement);
+            
+            this.staticElement=document.createElement('span');
+            this.staticElement.innerHTML=this.value;
+            this.containerElement.appendChild(this.staticElement);
+
+            this.fieldElement=document.createElement('input');
+            this.fieldElement.type='text';
+            this.fieldElement.value=this.value;
+            this.containerElement.appendChild(this.fieldElement);
+
+            this.saveButton=document.createElement('input');
+            this.saveButton.type='button';
+            this.saveButton.value='Save';
+            this.containerElement.appendChild(this.saveButton);
+
+            this.cancelButton=document.createElement('input');
+            this.cancelButton.type='button';
+            this.cancelButton.value='Cancel';
+            this.containerElement.appendChild(this.cancelButton);
+            this.convertToText();
+            this.attachEvent();
+        }
+        EditInPlace.prototype.convertToText=function(){
+            this.saveButton.style.display = 'none';
+            this.cancelButton.style.display = 'none';
+            this.fieldElement.style.display = 'none';
+            this.staticElement.style.display = 'inline';
+        }
+        EditInPlace.prototype.convertToEditAble=function(){
+            this.saveButton.style.display = 'inline';
+            this.cancelButton.style.display = 'inline';
+            this.fieldElement.style.display = 'inline';
+            this.staticElement.style.display = 'none';
+        }
+        EditInPlace.prototype.attachEvent=function(){
+            this.staticElement.addEventListener('click',() => {
+                console.log("arr function =>",this);
+                this.convertToEditAble();
+            });
+            this.saveButton.addEventListener('click',()=>{
+                const val=this.fieldElement.value;
+                setTimeout(()=>{
+                    this.staticElement.innerHTML=val;
+                    this.convertToText();
+                    console.log('保存成功');
+                },2000)
+            });
+            this.cancelButton.addEventListener('click',()=>{
+                this.convertToText();
+            })
+        }
+
+        // EditInPlace.prototype.attachEvent=function(){
+        //     this.staticElement.addEventListener('click',function() {
+        //         console.log("arr function =>"+this)
+        //         this.convertToEditAble();
+        //     });
+        // }
+        const ed1=new EditInPlace(
+            'ep1',
+            "一句话介绍你自己",
+            document.getElementById('app')
+        );
+        const ed2=new EditInPlace(
+            'ep2',
+            "一句话介绍你自己",
+            document.getElementById('app')
+        );
+    </script>
+</body>
+</html>

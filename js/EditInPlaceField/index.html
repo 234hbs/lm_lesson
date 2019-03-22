@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>edit in place</title>
+</head>
+<body>
+    <div id="app">
+        <div id="ep1">
+            <span id="content">
+             一句话介绍你自己
+            </span>
+
+            <input type="text"  id="input" placeholder="一句话介绍你自己">
+            <input type="button" value="保存" id="save">
+            <input type="button" value="取消" id="cancel">
+        </div>
+        <div id="ep2">
+                <span id="content">
+                 一句话介绍你自己
+                </span>
+    
+                <input type="text"  id="input" placeholder="一句话介绍你自己">
+                <input type="button" value="保存" id="save">
+                <input type="button" value="取消" id="cancel">
+            </div>
+        <script>
+                //查看状态
+                const save=document.getElementById('save');
+                const cancel=document.getElementById('cancel');
+                const input=document.getElementById('input');
+                const content=document.getElementById('content');
+                content.addEventListener('click',convertToEditAble);
+                convertToText();
+                function convertToText(){
+                    save.style.display='none';
+                    cancel.style.display='none';
+                    input.style.display='none';
+                    content.style.display='inline';
+                }
+                function convertToEditAble(){
+                    save.style.display='inline';
+                    cancel.style.display='inline';
+                    input.style.display='inline';
+                    content.style.display='none';
+                }
+                save.addEventListener('click',()=>{
+                    setTimeout(()=>{
+                        const val=input.value;
+                        content.innerHTML=val;
+                        convertToText();
+                    },500)
+                })
+            </script>
+    </div>
+</body>
+</html>
