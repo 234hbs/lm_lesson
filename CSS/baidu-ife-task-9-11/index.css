@@ -555,6 +555,7 @@ header .content{
     width: 100%;
     height: 1084px;
     box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
 }
 .crew .pas{
     height: 96px;
@@ -692,4 +693,161 @@ header .content{
     height: 21px;
     margin-top: 15px;
     margin-left: 15px;
+}
+/* contact form部分 */
+.contact{
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+}
+.contact .content{
+    width: 953px;
+    height: 560px;
+    margin-left:220px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+}
+.contact .content .sendMessage{
+    width: 470px;
+    height: 560px;
+}
+.contact .contacts{
+    height: 355px;
+    width: 351px;
+    margin-left: 131px;
+}
+.contact .contacts .title{
+    width:171px;
+    height:30px;
+    font-size:42px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:52px;
+    margin-bottom: 39px;
+}
+.contact .contacts .text{
+    width:351px;
+    height:68px;
+    font-size:16px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+.contact .contacts .contactsWay{
+    font-size:16px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    margin-top: 50px;
+    margin-left: 38px;
+}
+.contact .contacts .contactsWay .location{
+    width:223px;
+    height:40px;
+    position: relative;
+}
+.contact .contacts .contactsWay .phone{
+    width:123px;
+    height:15px;
+    margin-top: 34px;
+    margin-bottom: 36px;
+    position: relative;
+}
+.contact .contacts .contactsWay .email{
+    width:163px;
+    height:16px;
+    position: relative;
+}
+.contact .contacts .contactsWay .location::before{
+    content: "";
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: -36px;
+    background: url(./img/Map\ Icon.png) no-repeat;
+    background-size: 100%;
+}
+.contact .contacts .contactsWay .phone::before{
+    content: "";
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 4px;
+    left: -36px;
+    background: url(./img/Phone\ Icon.png) no-repeat;
+    background-size: 100%;
+}
+.contact .contacts .contactsWay .email::before{
+    content: "";
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 8px;
+    left: -36px;
+    background: url(./img/Mail\ Icon.png) no-repeat;
+    background-size: 100%;
+}
+.contact .content .sendMessage{
+    width:470px;
+    height:560px;
+    /* border:1px solid rgba(20,20,20,1);
+    opacity:0.1; */
+    border-radius:10px;
+    padding-left:51px;
+}
+.contact .content .sendMessage .title{
+    width:233px;
+    height:12px;
+    font-size:16px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin: 0 auto;
+    margin-top: 19px;
+    margin-bottom: 47px;
+}
+.contact .content .sendMessage input[type=email]{
+    width:370px;
+    height:50px;
+    border:1px solid rgba(38,35,33,1);
+    opacity:0.2;
+    border-radius:2px;;
+    margin:0 auto;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+.contact .content .sendMessage .subject{
+    width:370px;
+    height:50px;
+    border:1px solid rgba(38,35,33,1);
+    opacity:0.2;
+    border-radius:2px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+.contact .content .sendMessage .message{
+    width:370px;
+    height:144px;
+    border:1px solid rgba(38,35,33,1);
+    opacity:0.2;
+    border-radius:2px;
+    padding-top: 0;
+    padding-left:20px;
+    margin-bottom: 30px;
+}
+.contact .content .sendMessage input[type=submit]{
+    outline: none;
+    border:none;
+    width:370px;
+    height:50px;
+    background:rgba(20,20,20,1);
+    border-radius:2px;
+    color:#fff;
 }
