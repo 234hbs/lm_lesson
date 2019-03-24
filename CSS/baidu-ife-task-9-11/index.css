@@ -832,13 +832,14 @@ header .content{
     padding-left: 20px;
     margin-bottom: 30px;
 }
-.contact .content .sendMessage .message{
+.contact .content .sendMessage textarea{
     width:370px;
     height:144px;
     border:1px solid rgba(38,35,33,1);
+    font-size: 16px;
     opacity:0.2;
     border-radius:2px;
-    padding-top: 0;
+    padding-top:10px;
     padding-left:20px;
     margin-bottom: 30px;
 }
