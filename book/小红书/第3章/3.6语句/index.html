@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3.6.1 if语句
+        // 语法 if(condition) statement1 else statement2
+        //condition可以是任意表达式，而且对这个表达式的结果的值不一定是布尔值,ECMAS会自动调用Boolean()将表达式的结果装换为一个布尔值
+        // if(3){
+        //     console.log('我是对的');
+        // }
+
+        // 3.6.2 do-while语句
+        // do-while 后测试循环语句，循环体内的代码至少被执行一次
+        //语法： do{
+        //     statement
+        //   }while(expression)
+
+        //3.6.3 while语句
+        //while 前测试循环语句 循环体内代码被执行之前，就会对出口条件求值 ，循环体内的代码可能永远不会被执行
+        // 语法 while(expression) statement
+
+        //3.6.4 for语句
+        // for 前测试循环语句 循环前 初始化变量 ，定义 循环后 要执行的代码
+        // for(initialization;expression;post-loop-expression) statement
+        // for 与 while 功能相同 
+
+        //3.6.5 for-in 语句
+        // for-in 精准的迭代语句 ，可以用来 枚举 对象的 属性
+        // for(property in expression)  statement
+        //例子：将window对象里的所有属性名输出来 for(var propName in window) document.write(propName+'</br>');
+
+        //3.6.6 label 语句
+        //label语句先定义好，以便将来使用 
+        // 语法 label:statement
+        //start:for(let i=0;i<count;i++){
+        //    alert(i);
+        // }
+
+        //3.6.7 break 和 continue 语句
+        // var num=0;
+        // for(let i=1;i<10;i++){
+        //     if(i%5==0){
+        //         continue;
+        //     }
+        //     num++;
+        // }
+        // alert(num); 8
+        // 总结：break;跳出本层循环； continue:跳过本次循环继续接下来的循环
+
+        //3.6.8 with 语句
+        // with语句 将代码的作用域设置到一个特定的对象中。
+        //语法 with(expression) statement; 目的：简化多次编写同一个对象的工作
+        // var qs=location.search.substring(1);
+        // var hostName=location.hostname;
+        // var url=href;
+
+        //with(location){
+        // var qs=search.substring(1);
+        // var hostName=hostname;
+        // var url=href;
+        //} 严格模式下不允许使用with语句 否则视为语法错误 大量使用with语句会导致性能下降 大型项目不建议使用
+        
+
+    </script>
+</body>
+</html>
