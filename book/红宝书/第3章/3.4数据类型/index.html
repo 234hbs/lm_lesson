@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 五种基本数据类型+一种复杂数据类型：
+        // Undefined Null Boolean Number String + Object
+        // typeof 操作符 返回数据类型
+        // "undefined"  未定义的值（声明未赋值）
+        // "boolean"    布尔值
+        // "string"     字符串值
+        // "number"     数值
+        // "object"     对象或null
+        // "function"   函数
+
+        // 1.Undefined
+        // 声明未赋值(初始化)则值为undefined
+        //2.Null
+        // null值表示一个空对象指针    typeof null  ==> object
+        // 如果定义的变量准备将来用于保存对象 那么最好将该变量初始化为null
+        //3.Boolean
+        //true false 两个值 Boolean()函数可以将值转换为布尔值
+        // 数据类型    转换为true的值             转换为false的值
+        // Boolean    true                      false
+        // String     任何非空字符串             ""(空字符串)
+        // Nmuber     任何非零数字值（无穷大）    0、NaN
+        // Object     任何对象                   null
+        // Undefined                            undefined
+        //4.Number
+        // 5.String
+            // 字符串的特点:不可变
+            // toString()
+            // 数值、布尔值、对象、字符串值都有toString方法
+            // var num=10;
+            // alert(num.toString());   "10"
+            // alert(num.toString(2));    "1010"
+            // alert(num.toString(8));    "12"
+            // alert(num.toString(10));   "10"
+            // alert(num.toString(16));    "a"
+
+            // 6.Object
+            // 对象就是一组数据和功能的集合 
+            // Object的每个实例都有下列属性和方法
+            // construnctor 保存着用于创建当前对象的函数
+            // hasOwnPropertype(propertypeName)检查给定的属性在当前对象实例中时候存在
+            //isPrototypeOf(object) 检查传入的对象是否是当前对象的原型
+            //proertyIsEnumerable(propertyName) 用于检查给定的属性能否使用for-in语句
+            //toLocaleString() 返回对象的字符串表示
+
+
+    </script>
+</body>
+</html>
