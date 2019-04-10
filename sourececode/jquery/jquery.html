@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script> -->
+    <script>
+        // jquery好用之处： 兼容性 + 抹平浏览器之间的差异 + 快
+        // js里函数可以作为参数 ，高阶函数
+        function $(selector){
+            //DOM Ready事件
+            //查找元素
+            if(typeof selector === 'string'){
+                let obj = document.querySelector(selector);
+                obj.html = function (content){
+                    // console.log(Object.prototype.toString.call(obj))
+                    if(Object.prototype.toString.call(obj) === "[object HTMLDivElement]"){
+                        setText(obj,content)
+                    }
+                }
+                return obj;
+            }else if(typeof selector === 'function'){
+                document.addEventListener('DOMContentLoaded',selector,false);
+            }
+        }
+         
+         function setText(obj,content){
+            obj.innerHTML = obj.innerHTML&&obj.innerText;
+            obj.innerHTML = content;
+         }
+    $(function(){
+       $('#root').html('<h1>123</h1>')
+    })
+    </script>
+</body>
+</html>

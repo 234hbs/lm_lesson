@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>司徒正美</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+    function $(selector){
+        if(typeof selector === 'function'){
+            document.addEventListener('DOMContentLoaded',selector,false);
+        }
+        // else if(typeof selector === 'string'){
+        //     const obj=document.querySelector(selector);
+        //     obj.html=function (content){
+        //         obj.innerHTML=content;
+        //     }
+        //     if(obj){
+        //         return obj;
+        //     }
+        // }
+        else if(typeof selector === 'string'){
+            const ele=document.querySelector(selector);
+            function JQueryEle(ele){
+                this.ele=ele;
+            }
+            JQueryEle.prototype.html=function(content){
+                this.ele.innerHTML=content;
+            }
+            const jQuery={};
+            jQuery.wrapper=function(content){
+                const jqueryEle = new JQueryEle(ele);
+                return jqueryEle;
+            }
+            if(ele){
+                return new jQuery.wrapper(ele);
+            }
+        }
+    }
+    $(function(){
+        console.log('DOM Ready');
+        $('#root').html('<p>你好骚啊！</p>');
+
+    })
+    </script>
+</body>
+</html>
