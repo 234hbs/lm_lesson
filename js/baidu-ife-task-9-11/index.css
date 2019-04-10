@@ -1,0 +1,854 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#f2f2f2;
+}
+header{
+    background: url(./img/bg.png) 0 0 no-repeat;
+    background-size: cover; 
+}
+header .mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    overflow: hidden;
+}
+header .content{
+    width: 970px;
+    margin:208px auto 0;
+    color:rgba(255,255,255,.7);
+}
+.hello .title{
+    font-size:62px;
+    font-weight:200;
+    color:rgba(255,255,255,1);
+    line-height:72px;
+    text-align: center;
+}
+.hello .text{
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 32px;
+    width: 766px;
+    margin: 86px auto 0;
+    text-align: center;
+}
+/* 表单 */
+.create{
+    box-sizing: border-box;
+    width: 100%;
+    height: 250px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius: 2px;
+    margin-top: 104px;
+    padding: 61px 100px 52px;
+    margin-bottom: 220px;
+}
+.create .title{
+    text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+}
+.create .profile{
+    font-size: 12px;
+    color:rgba(255,255,255,.3);
+    margin:19px auto 45px;
+    text-align: center;
+}
+.create .input input{
+    outline: none;
+    border:1px solid rgba(255,255,255,.2);
+    width: 292px;
+    height: 50px;
+    border-radius: 2px;
+    background: rgba(0,0,0,.2);
+    color:#fff;
+    text-indent: 22px;
+}
+.create .input{
+    display:flex;
+    justify-content: space-between;
+}
+.create .input input[type="button"]{
+    width: 125px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    text-indent: 0;
+}
+
+/* 第二板块 */
+
+.introduce{
+    width: 100%;
+    height: 100%;
+}
+.introduce-content{
+    margin-top: 79px;
+}
+.introduce-content .title{
+    font-size:14px;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:28px;
+    text-align: center;
+}
+.introduce-content .text{
+    width:657px;
+    height:93px;
+    font-size:42px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:52px;
+    text-align: center;
+    display: block;
+    margin:0 auto;
+}
+.introduce .section{
+    width: 900px;
+    height: 256px;
+    margin: 85px auto;
+    box-sizing: border-box;
+    position: relative;
+}
+.introduce .section-inline{
+    width: 100%;
+}
+.section-line.first{
+    position: relative;
+}
+.section-line .option{
+    width: 426px;
+    display: inline-block;
+}
+.section-line.first .option.phone{
+    padding-top: 0;
+
+}
+.option.phone .text::before{
+    content: "";
+    width: 30px;
+    height: 49px;
+    position: absolute;
+    background: url(./img/Iphone\ Icon.png);
+    background-size: 100%;
+    top: 0;
+    left:-61px;
+}
+.section-line.first .option.phone .text{
+    display: inline-block;
+    width: 355px;
+    height: 100px;
+    margin-left: 61px;
+    position: relative;
+}
+.section-line.first .option.phone .text .name{
+    width:109px;
+    height:16px;
+    font-size:20px;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin-bottom: 25px;
+}
+.section-line.first .option.phone .text .des{
+    width:355px;
+    height:42px;
+    font-size:16px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+.section-line.first .option.access{
+    position: absolute;
+    right: 0;
+}
+.option.access .text::before{
+    content: "";
+    width: 30px;
+    height: 49px;
+    position: absolute;
+    background: url(./img/Check\ Icon.png) no-repeat;
+    background-size: 100%;
+    top: 0;
+    left:-61px;
+}
+.section-line.first .option.access .text{
+    display: inline-block;
+    width: 355px;
+    height: 100px;
+    margin-left: 61px;
+    position: relative;
+}
+.section-line.first .option.access .text .name{
+    width:109px;
+    height:16px;
+    font-size:20px;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin-bottom: 25px;
+}
+.section-line.first .option.access .text .des{
+    width:355px;
+    height:42px;
+    font-size:16px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+.section-line.second{
+    bottom: 0;
+    position: relative;
+    margin-top: 60px;
+    height: 100px;
+}
+.option.edit .text::before{
+    content: "";
+    width: 50px;
+    height: 49px;
+    position: absolute;
+    background: url(./img/Pencil\ Icon.png) no-repeat;
+    background-size: 100%;
+    top: 0;
+    left:-61px;
+}
+.section-line.second .option.edit .text{
+    display: inline-block;
+    width: 355px;
+    height: 100px;
+    margin-left: 61px;
+    position: relative;
+}
+.section-line.second .option.edit .text .name{
+    width:164px;
+    height:20px;
+    font-size:20px;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+}
+.section-line.second .option.edit .text .des{
+    width:348px;
+    height:42px;
+    font-size:16px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    margin-top: 10px;
+    opacity:0.7;
+}
+.section-line.second  .option.custom{
+    position: absolute;
+    right: 0;
+}
+.option.custom .text::before{
+    content: "";
+    width: 50px;
+    height: 49px;
+    position: absolute;
+    background: url(./img/Settings\ Icon.png) no-repeat;
+    background-size: 100%;
+    top: 0;
+    left:-61px;
+}
+.section-line.second .option.custom .text{
+    display: inline-block;
+    width: 355px;
+    height: 100px;
+    margin-left: 61px;
+    position: relative;
+}
+.section-line.second .option.custom .text .name{
+    width:137px;
+    height:16px;
+    font-size:20px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin-bottom: 10px;
+}
+.section-line.second .option.custom .text .des{
+    width:351px;
+    height:68px;
+    font-size:16px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+/* smartCar部分 */
+.smartCar{
+    background: url(./img/bg2.png) no-repeat;
+}
+.smartCar .mask{
+    width: 100%;
+    height:800px;
+    background:rgba(0,0,0,.7);
+    position: relative;
+}
+.smartCar .content{
+    width: 520px;
+    height: 440px;
+    position: absolute;
+    top: 182px;
+    left: 315px;
+}
+.smartCar .content .title{
+    width:366px;
+    height:137px;
+    font-size:42px;
+    font-weight:200;
+    color:rgba(255,255,255,1);
+    line-height:52px;
+}
+.smartCar .content .text{
+    width:367px;
+    height:130px;
+    font-size:18px;
+    font-weight:200;
+    color:rgba(255,255,255,1);
+    line-height:28px;
+    opacity:0.7;
+    margin-top: 47px;
+}
+.smartCar .content .button{
+    width: 100%;
+    height: 70px;
+    margin-top: 58px;
+}
+.smartCar .content .button input{
+    width: 240px;
+    height: 60px;
+    outline: none;
+}
+.smartCar .content .button :first-child{
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(255,255,255,1);
+    border-radius:2px;
+    margin-right: 30px;
+    outline: none;
+    cursor: pointer;
+}
+.smartCar .content .button :last-child{
+    border:1px solid rgba(255,255,255,1);
+    opacity:0.3;
+    border-radius:2px;
+    cursor: pointer;
+    color:black;
+}
+.smartCar .dashed{
+    width: 720px;
+    height: 542px;
+    border:1px dashed gray;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-30%,-50%);
+}
+.smartCar .course{
+    width: 440px;
+    height: 400px;
+    border:1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+.smartCar .course .course-content{
+    width: 420px;
+    height: 360px;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: url(./img/course.png) no-repeat;
+    background-size: 100%;
+}
+/* products部分 */
+.products{
+    height: 580px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid gray;
+}
+.products .title{
+    width:535px;
+    height:41px;
+    font-size:42px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:52px;
+    margin:0 auto;
+    padding-top: 99px;
+}
+.products .content{
+    width: 950px;
+    height: 272px;
+    margin:85px auto;
+    display: flex;
+    justify-content: space-around;
+} 
+.products .content .text{
+    height: 100%;
+}
+.products .content :first-child{
+    width: 251px;
+}
+.products .content :first-child .icon{
+    width: 120px;
+    height: 35px;
+    background: url(./img/Singleton.png) no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    border:1px dashed gray;
+}
+.products .content :first-child .container{
+    width:251px;
+    height:198px;
+    font-size:16px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    margin-top: 39px;
+    opacity:0.7;
+}
+.products .content :nth-child(2){
+    width: 270px;
+}
+.products .content :nth-child(2) .icon{
+    width: 76px;
+    height: 34px;
+    background: url(./img/Hero.png) no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    border:1px dashed gray;
+    margin-bottom: 43px;
+}
+.products .content :nth-child(2) .container{
+    width:264px;
+    height:172px;
+    font-size:16px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+.products .content :nth-child(3){
+    width: 270px;
+}
+.products .content :nth-child(3) .icon{
+    width: 117px;
+    height: 31px;
+    background: url(./img/Portland.png) no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    border:1px dashed gray;
+    margin-bottom: 43px;
+}
+.products .content :nth-child(3) .container{
+    width:264px;
+    height:172px;
+    font-size:16px;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+/* animal部分 */
+.animal{
+    height: 960px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 114px 315px 106px 315px;
+    border-bottom: 3px solid gray;
+}
+.animal .content{
+    width: 970px;
+    height: 780px;
+    box-sizing: border-box;
+}
+.animal .content .pas_1{
+    width: 970px;
+    height: 350px;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+}
+.animal .content .pas_1 .pic{
+    width: 570px;
+    height: 350px;
+    background: url(./img/glass.png) no-repeat;
+    background-size: 100%;
+}
+.animal .content .pas_1 .text{
+    width: 305px;
+    height: 238px;
+    margin-left: 100px;
+}
+.animal .content .pas_1 .text .title{
+    width: 265px;
+    height: 247px;
+    width:265px;
+    height:47px;
+    font-size:20px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin-bottom: 35px;
+}
+.animal .content .pas_1 .text .container{
+    width:305px;
+    height:156px;
+    font-size:16px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:28px;
+    opacity:0.7;
+}
+.animal .content .pas_2{
+    width: 970px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+}
+.animal .content .pas_2 .pic{
+    width: 570px;
+    height: 350px;
+    background: url(./img/bird.png) no-repeat;
+    background-size: 100%;
+}
+.animal .content .pas_2 .text{
+    width: 305px;
+    height: 238px;
+    margin-right: 95px;
+}
+.animal .content .pas_2 .text .title{
+    width: 321px;
+    height: 51px;
+    font-size:20px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin-bottom: 32px;
+}
+.animal .content .pas_2 .text .container{
+    width:306px;
+    height:153px;
+    font-size:16px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:28px;
+    opacity:0.7;
+}
+/* crew部分 */
+.crew{
+    width: 100%;
+    height: 1084px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+.crew .pas{
+    height: 96px;
+    width: 695px;
+    margin:92px auto;
+    margin-bottom: 0;
+}
+.crew .pas .title{
+    width:394px;
+    height:30px;
+    font-size:42px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:52px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.crew .pas .text{
+    width:695px;
+    height:46px;
+    font-size:18px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:28px;
+    opacity:0.7;
+    text-align: center;
+}
+.crew .person{
+    width: 1000px;
+    height: 900px;
+    margin:0 auto;
+}
+.crew .person .pic{
+    width: 400px;
+    height: 400px;
+}
+.crew .person .inline{
+    width: 100%;
+    height: 420px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.person .line_1 .p1{
+    position: relative;
+    background: url(./img/p1.png) no-repeat;
+    background-size: cover;
+}
+.person .line_1 .p2{
+    position: relative;
+    background: url(./img/p2.png) no-repeat;
+    background-size: cover;
+}
+.person .line_2 .p3{
+    position: relative;
+    background: url(./img/p3.png) no-repeat;
+    background-size: cover;
+}
+.person .line_2 .p4{
+    position: relative;
+    background: url(./img/p4.png) no-repeat;
+    background-size: cover;
+}
+.person .line_1 .mask_1{
+    width: 360px;
+    height: 360px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: rgba(0,0,0,.5);
+}
+.person .line_1 .info_1{
+    width: 200px;
+    height: 180px;
+    position: absolute;
+    top: 180px;
+    left:130px;
+}
+.person .line_1 .info_1 .name{
+    width:128px;
+    height:16px;
+    font-size:20px;
+    font-family:Montserrat-Light;
+    font-weight:100;
+    color:rgba(255,255,255,1);
+    line-height:32px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+} 
+.person .line_1 .info_1 .position
+{
+    width:184px;
+    height:24px;
+    font-size:12px;
+    font-weight:300;
+    color:rgba(255,255,255,1);
+    line-height:28px;
+    opacity:0.4;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.person .line_1 .info_1 .contactWay{
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: space-around;
+}
+.person .line_1 .info_1 .contactWay .icon{
+    display: block;
+    width: 51px;
+    height: 54px;
+}
+.person .line_1 .info_1 .contactWay .icon{
+    border-radius: 50%;
+    border:1px solid #ccc;
+}
+.person .line_1 .info_1 .contactWay .faceBook img{
+    width: 12px;
+    height: 28px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.person .line_1 .info_1 .contactWay .twitter img{
+    width: 18px;
+    height: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.person .line_1 .info_1 .contactWay .linkedIn img{
+    width: 21px;
+    height: 21px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+/* contact form部分 */
+.contact{
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+}
+.contact .content{
+    width: 953px;
+    height: 560px;
+    margin-left:220px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+}
+.contact .content .sendMessage{
+    width: 470px;
+    height: 560px;
+}
+.contact .contacts{
+    height: 355px;
+    width: 351px;
+    margin-left: 131px;
+}
+.contact .contacts .title{
+    width:171px;
+    height:30px;
+    font-size:42px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:52px;
+    margin-bottom: 39px;
+}
+.contact .contacts .text{
+    width:351px;
+    height:68px;
+    font-size:16px;
+    font-family:Montserrat-ExtraLight;
+    font-weight:200;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    opacity:0.7;
+}
+.contact .contacts .contactsWay{
+    font-size:16px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:26px;
+    margin-top: 50px;
+    margin-left: 38px;
+}
+.contact .contacts .contactsWay .location{
+    width:223px;
+    height:40px;
+    position: relative;
+}
+.contact .contacts .contactsWay .phone{
+    width:123px;
+    height:15px;
+    margin-top: 34px;
+    margin-bottom: 36px;
+    position: relative;
+}
+.contact .contacts .contactsWay .email{
+    width:163px;
+    height:16px;
+    position: relative;
+}
+.contact .contacts .contactsWay .location::before{
+    content: "";
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: -36px;
+    background: url(./img/Map\ Icon.png) no-repeat;
+    background-size: 100%;
+}
+.contact .contacts .contactsWay .phone::before{
+    content: "";
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 4px;
+    left: -36px;
+    background: url(./img/Phone\ Icon.png) no-repeat;
+    background-size: 100%;
+}
+.contact .contacts .contactsWay .email::before{
+    content: "";
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 8px;
+    left: -36px;
+    background: url(./img/Mail\ Icon.png) no-repeat;
+    background-size: 100%;
+}
+.contact .content .sendMessage{
+    width:470px;
+    height:560px;
+    /* border:1px solid rgba(20,20,20,1);
+    opacity:0.1; */
+    border-radius:10px;
+    padding-left:51px;
+}
+.contact .content .sendMessage .title{
+    width:233px;
+    height:12px;
+    font-size:16px;
+    font-family:Montserrat-Light;
+    font-weight:300;
+    color:rgba(20,20,20,1);
+    line-height:32px;
+    margin: 0 auto;
+    margin-top: 19px;
+    margin-bottom: 47px;
+}
+.contact .content .sendMessage input[type=email]{
+    width:370px;
+    height:50px;
+    border:1px solid rgba(38,35,33,1);
+    opacity:0.2;
+    border-radius:2px;;
+    margin:0 auto;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+.contact .content .sendMessage .subject{
+    width:370px;
+    height:50px;
+    border:1px solid rgba(38,35,33,1);
+    opacity:0.2;
+    border-radius:2px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+.contact .content .sendMessage textarea{
+    width:370px;
+    height:144px;
+    border:1px solid rgba(38,35,33,1);
+    font-size: 16px;
+    opacity:0.2;
+    border-radius:2px;
+    padding-top:10px;
+    padding-left:20px;
+    margin-bottom: 30px;
+}
+.contact .content .sendMessage input[type=submit]{
+    outline: none;
+    border:none;
+    width:370px;
+    height:50px;
+    background:rgba(20,20,20,1);
+    border-radius:2px;
+    color:#fff;
+}
