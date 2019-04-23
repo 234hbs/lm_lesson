@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Gh24rRmrsaai493C6CwGEpI1UKOHgsYa"></script>
+  <title>BaiDu-Map</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  #allmap{
+    width: 960px;
+    height: 800px;
+  }
+  </style>
+</head>
+<body>
+  <p>
+    <button onclick="getLocation1()">获取当前位置</button>
+  </p>
+  <div id="allmap"></div>
+  <div id="out"></div>
+  <script>
+    var longitude //经度
+    var latitude //纬度
+    
+    function getLocation1() {
+      console.log(111);
+      var out = document.getElementById('out');
+      if (!navigator.geolocation) {
+        console.log(222);
+        out.innerHTML ='您的浏览器不支持获取当前位置';
+        return;
+      }
+      
+      function success(position){
+        console.log(333);
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        out.innerHTML = '<p>您的经度：'+ longitude + '<br>你的纬度'+ latitude + '</p>';
+
+        var map = new BMap.Map('allmap');//创建地图实例
+        map.centerAndZoom(new BMap.Point(longitude, latitude), 11);
+        // 创建地理编码实例      
+        var myGeo = new BMap.Geocoder();
+        // 根据坐标得到地址描述    
+        myGeo.getLocation(new BMap.Point(longitude, latitude), function (result) {
+          if (result) {
+            alert(result.address);
+          }
+        });
+
+        var point = new BMap.Point(longitude, latitude);
+        map.centerAndZoom(point, 12);
+        var geoc = new BMap.Geocoder();
+        map.addEventListener("click", function (e) {
+          var pt = e.point;
+          geoc.getLocation(pt, function (rs) {
+            var addComp = rs.addressComponents;
+            alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+          });
+        });
+
+      }
+
+      function error(){
+        console.log(444);
+        out.innerHTML = '无法获取您当前的位置';
+      }
+      navigator.geolocation.getCurrentPosition(success,error);
+
+    }
+  </script>
+</body>
+</html>
