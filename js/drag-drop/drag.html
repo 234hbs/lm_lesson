@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag</title>
+  <style>
+  .box{
+    width: 200px;
+    height: 200px;
+    border:4px solid green;
+    text-align: center;
+    margin:0 auto;
+  }
+  .box:nth-child(2){
+    margin-top: 30px;
+  }
+  .box img{
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+  <div class="box" draggable="true" id="box1">
+    <p>辣条</p>
+  </div>
+  <div class="box" draggable="true" id="box2">
+    <img src="./wzy.jpg" alt="">
+  </div>
+
+  <script>
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+    const boxs = document.querySelectorAll('.box');
+    let srcDiv = null;
+    for(let i=0,length = boxs.length;i<length;i++){
+      let box =boxs[i];
+      box.addEventListener('dragstart',function(event){
+        srcDiv = this;
+        //源对象 目标对象
+        event.dataTransfer.setData('text/html',this.innerHTML);
+      })
+      box.addEventListener('drag',function(event){
+        console.log('drag');
+      })
+      box.addEventListener('dragend',function(event){
+        console.log('dragend');
+      })
+      box.addEventListener('dragenter',function(event){
+        console.log('dragenter');
+      })
+      box.addEventListener('dragleave',function(event){
+        console.log('dragleave');
+      })
+      box.addEventListener('dragover',function(event){
+        console.log('dragover');
+        event.preventDefault();
+      })
+      box.addEventListener('drop',function(event){
+        srcDiv.innerHTML = this.innerHTML;
+        this.innerHTML = event.dataTransfer.getData('text/html');
+      })
+      
+      
+    }
+    // box1.addEventListener('dragstart',function(event){
+      
+    // })
+
+    // box2.addEventListener('dragover',function(event){
+    //   event.preventDefault();
+    // })
+    // box2.addEventListener('drop',function(event){
+    //   this.innerHTML = box1.innerHTML;
+    // })
+
+  </script>
+</body>
+</html>
