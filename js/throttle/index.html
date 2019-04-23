@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Throttle 防抖</title>
+</head>
+<body>
+  <div class="row">
+    <input type="text" id="unDebounce">
+  </div>
+
+  <div class="row">
+    <input type="text" id="debounce">
+  </div>
+
+  <script>
+    function ajax(content) {
+      console.log('ajax request' + content);
+    }
+    let inputa = document.getElementById('unDebounce');
+    inputa.addEventListener('keyup', function(e){
+      ajax(e.target.value)
+    })
+
+    
+    let inputb = document.getElementById('debounce');
+    inputb.addEventListener('keyup', function(e){
+      // ajax(e.target.value)
+      // 最后还是要ajax,只不过少做一些
+      debounceAjax(e.target.value);
+    })
+    /**
+     * @功能防抖 性能优化
+     * @para func function
+     * @para delay number
+     * @return function
+     **/
+    var debounceAjax = debounce(ajax, 2000);
+    function debounce(func, delay) {
+     
+      // let i = 0;
+      return function(args){
+        // i++;
+        // console.log('clear', _timeout, i)
+        clearTimeout(func.id);
+        var that = this;
+        func.id = setTimeout(function(){
+          func.call(that, args)
+          func(args)
+        },delay)
+        // console.log(_timeout, '-----', i)
+      }
+    }
+  </script>
+</body>
+</html>
