@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>alloyFinger</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .imgBox{
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+  }
+  img{
+    width: 160px;
+  }
+  .title{
+    text-align: center;
+  }
+  .swipeBox{
+    font-size: 0;
+    width: 160px;
+    height: 160px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+  #swipeScroll{
+    width: 480px;
+    height: 160px;
+
+  }
+  </style>
+</head>
+<body>
+  <div class="example">
+    <div class="title">tap</div>
+    <div class="imgBox tapBox">
+      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" alt="">
+    </div>
+
+    <div class="title">pinch</div>
+    <div class="imgBox">
+      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" id="pinchImg" alt="">
+    </div>
+
+    <div class="title">rotate</div>
+    <div class="imgBox">
+      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" id="rotateImg" alt="">
+    </div>
+
+    <div class="title">pinch + rotate</div>
+    <div class="imgBox">
+      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" id="pinchRotateImg" alt="">
+    </div>
+
+    <div class="title">pressmove</div>
+    <div class="imgBox">
+      <img src="http://alloyteam.github.io/AlloyFinger/asset/test.png" id="pressmoveImg" alt="">
+    </div>
+
+    <div class="title">swipe</div>
+    <div class="imgBox">
+      <div class="swipeBox">
+        <div class="scroll" id="swipeScroll">
+          <img id="pressMoveImage" src="http://alloyteam.github.io/AlloyFinger/asset/test.png" alt="">
+          <img id="pressMoveImage" src="http://alloyteam.github.io/AlloyFinger/asset/test2.png" alt="">
+          <img id="pressMoveImage" src="http://alloyteam.github.io/AlloyFinger/asset/test3.png" alt="">
+        </div>
+      </div>
+    </div>
+
+  </div> 
+  <script src="./vconsole.min.js"></script>
+  <script src="http://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
+  <script>
+  new VConsole();
+  function getNumberByTransformAttribute(str) {
+    const innitArr = str.split('/[\(\)]/')
+    return parseInt(innitArr[1]);
+  }
+  new AlloyFinger(
+    document.querySelector('.tapBox'),
+    {
+      tap:function(){
+        console.log('tap');
+      },
+      doubleTap:function(){
+        console.log('doubleTap');
+      }
+    }
+    )
+
+    const pinchImg = document.getElementById('pinchImg');
+    new AlloyFinger(
+      pinchImg,
+      {
+        pinch:function(evt){
+          pinchImg.style.transform = `scale(${evt.zoom})`;
+        }
+      }
+    )
+     
+    
+    const rotateImg = document.getElementById('rotateImg');
+    new AlloyFinger(
+      rotateImg,
+      {
+        rotate:function(evt){
+          const rotateStr = rotateImg.style.transform || 'rotate(0deg)';
+          console.log(rotateStr);
+          const rotateStrSplit = rotateStr.split(/[\(\)]/);
+          let deg =parseInt(rotateStrSplit[1]);
+          rotateImg.style.transform = `rotate(${evt.angle+deg}deg)`;
+        }
+      }
+    )
+
+    const pinchRotateImg = document.getElementById('pinchRotateImg');
+    new AlloyFinger(
+      pinchRotateImg,
+      {
+        pinch:function(evt){
+          const innitStr = pinchRotateImg.style.transform || 'rotate(0)';
+          const innitStyleArr = innitStr.split('');
+          pinchRotateImg.style.transform = `${innitStyleArr[0]} scale(${evt.zoom})`;
+        },
+        rotate:function(evt){
+          const innitStr = pinchRotateImg.style.transform || 'rotate(0)';
+          const innitStyleArr = innitStr.split('');
+          const deg = getNumberByTransformAttribute(innitStyleArr[0]);
+          pinchRotateImg.style.transform = `rotate(${deg + evt.angle}deg) ${innitStyleArr[1]}`;
+        }
+      }
+    )
+
+    const pressmoveImg = document.getElementById('pressmoveImg');
+    new AlloyFinger(
+      pressmoveImg,
+      {
+        pressMove:function(evt){
+          let innitStr = pressmoveImg.style.transform || 'translateX(0) translateY(0)';
+          let innitStyleArr = innitStr.split(' ');
+          let x = getNumberByTransformAttribute(innitStyleArr[0]);
+          let y = getNumberByTransformAttribute(innitStyleArr[1]);
+          pressmoveImg.style.transform   = `translateX(${evt.deltaX + x})px translateY(${evt.deltaY + y})px`;
+        }
+      }
+    )
+
+    const swipeScroll =document.getElementById('swipeScroll');
+    new AlloyFinger(
+  swipeScroll,
+      {
+        swipe:function(evt){
+          if(evt.directon == 'Left'){
+            if(currentindex >= 2) return false;
+            currentindex ++;
+            let xStr = swipeScroll.style.transform || 'translate(0px)';
+            let x = getNumberByTransformAttribute(xStr);
+            swipeScroll.style.transform = `translateX(${-160 + x}px)`;
+          }else if(evt.directon == 'Right'){
+            if(currentindex <= 0) return false;
+            currentindex --;
+            swipeScroll.style.transform = `translateX(${160 + x}px)`;
+          }
+        }
+      }
+      )
+      
+    
+  </script>
+</body>
+</html>
