@@ -1,0 +1,6 @@
+<view>
+  <ul wx:for="{{people}}">
+    <li>{{item.name}}</li>
+  </ul>
+</view>
+
